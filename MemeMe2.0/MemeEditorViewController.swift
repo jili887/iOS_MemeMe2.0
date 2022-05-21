@@ -64,7 +64,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         shareButton.isEnabled = false
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
-        dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     //MARK: Image Picker Functions
@@ -173,7 +173,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             
             if completed {
                 self.save()
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }

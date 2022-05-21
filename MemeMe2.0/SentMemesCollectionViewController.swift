@@ -37,6 +37,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        navigationController?.isNavigationBarHidden = false
         collectionView!.reloadData()
     }
     
@@ -45,7 +46,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @objc func addNewMeme(_ sender: Any) {
         let editMemeController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         editMemeController.hidesBottomBarWhenPushed = true
-        present(editMemeController, animated: true, completion: nil)
+        navigationController?.isNavigationBarHidden = true
+        self.navigationController!.pushViewController(editMemeController, animated: true)
     }
     
     // MARK: Collection View Data Source
