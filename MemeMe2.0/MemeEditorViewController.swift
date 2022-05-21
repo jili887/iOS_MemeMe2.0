@@ -87,7 +87,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = Source
-        self.present(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
     }
 
     //MARK: Image from photo library
@@ -120,8 +120,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func unsubscribeToKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -131,9 +130,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        if (bottomTextField.isFirstResponder) {
-            view.frame.origin.y = 0
-        }
+        view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {

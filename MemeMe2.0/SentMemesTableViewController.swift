@@ -20,6 +20,28 @@ class SentMemesTableViewController: UITableViewController {
         return appDelegate.memes
     }
     
+    // MARK: Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewMeme))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        tableView!.reloadData()
+    }
+    
+    // MARK: Add button to generate new Meme image
+    
+    @objc func addNewMeme(_ sender: Any) {
+        let editMemeController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        editMemeController.hidesBottomBarWhenPushed = true
+        self.navigationController!.pushViewController(editMemeController, animated: true)
+    }
+    
     // MARK: Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,20 +53,15 @@ class SentMemesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
-        // Set the image
+        // Set the image and text
         cell.imageView?.image = meme.memedImage
-        
-        // Put the topText and bottomText from meme to detailText
-//        if let detailTextLabel = cell.detailTextLabel {
-//            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
-//        }
+        cell.textLabel?.text = "\(meme.topText) ... \(meme.bottomText)"
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // TODO: Create detail layout and assign identifier
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "SentMemesDetailViewController") as! SentMemesDetailViewController
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)

@@ -73,11 +73,11 @@
 				2A032048283757E8006DF285 /* SentMemesCollectionViewController.swift */,
 				2A03204A28375C65006DF285 /* MemeCollectionViewCell.swift */,
 				2A03204628374FEC006DF285 /* SentMemesDetailViewController.swift */,
+				2A0320422835F1AC006DF285 /* Meme.swift */,
 				2A0320342835F15C006DF285 /* Main.storyboard */,
 				2A0320372835F15E006DF285 /* Assets.xcassets */,
 				2A0320392835F15E006DF285 /* LaunchScreen.storyboard */,
 				2A03203C2835F15E006DF285 /* Info.plist */,
-				2A0320422835F1AC006DF285 /* Meme.swift */,
 			);
 			path = MemeMe2.0;
 			sourceTree = "<group>";
