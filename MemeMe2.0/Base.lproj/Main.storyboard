@@ -31,7 +31,7 @@
         <scene sceneID="Aa1-eN-clc">
             <objects>
                 <navigationController title="Table" id="oDT-rB-YqA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" image="list.bullet" catalog="system" id="98N-mK-ftK"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="list.dash" catalog="system" id="98N-mK-ftK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rf5-ZB-g0W">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeCell" textLabel="wZy-zl-f5b" style="IBUITableViewCellStyleDefault" id="Z0a-c8-giF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="wZy-zl-f5b" style="IBUITableViewCellStyleDefault" id="Z0a-c8-giF">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z0a-c8-giF" id="ySa-md-ZOF">
@@ -86,7 +86,7 @@
         <scene sceneID="14e-kf-z1g">
             <objects>
                 <navigationController title="Collection" id="WdL-to-Sxz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="square.grid.3x3.fill" catalog="system" id="1ea-fX-41x"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="grid" catalog="system" id="1ea-fX-41x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hLv-6r-GPG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -108,16 +108,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-o9-Rqc">
-                                <rect key="frame" x="10" y="204" width="394" height="258"/>
+                                <rect key="frame" x="57" y="348" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Xzk-eq-fMx"/>
+                                    <constraint firstAttribute="height" constant="200" id="eU4-O4-fmL"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mio-cT-cBy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="EQ7-o9-Rqc" secondAttribute="trailing" constant="10" id="LVe-D6-MYc"/>
-                            <constraint firstItem="mio-cT-cBy" firstAttribute="bottom" secondItem="EQ7-o9-Rqc" secondAttribute="bottom" constant="400" id="VwD-4X-Dt8"/>
-                            <constraint firstItem="EQ7-o9-Rqc" firstAttribute="top" secondItem="mio-cT-cBy" secondAttribute="top" constant="160" id="nkN-0H-ujs"/>
-                            <constraint firstItem="EQ7-o9-Rqc" firstAttribute="leading" secondItem="mio-cT-cBy" secondAttribute="leading" constant="10" id="thW-uD-slJ"/>
+                            <constraint firstItem="EQ7-o9-Rqc" firstAttribute="centerY" secondItem="wOj-84-UGH" secondAttribute="centerY" id="71f-Db-tZa"/>
+                            <constraint firstItem="EQ7-o9-Rqc" firstAttribute="centerX" secondItem="wOj-84-UGH" secondAttribute="centerX" id="UzZ-Fh-md7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -150,18 +152,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Rm-pH-bLa" userLabel="Meme Image View">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Rm-pH-bLa" userLabel="Meme Image View">
                                             <rect key="frame" x="24" y="31.5" width="80" height="65"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="MDc-Ot-Xd8"/>
-                                                <constraint firstAttribute="width" constant="80" id="fFC-nM-G0O"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="0Rm-pH-bLa" firstAttribute="centerX" secondItem="ipW-KF-7hm" secondAttribute="centerX" id="1rQ-wb-AfK"/>
-                                        <constraint firstItem="0Rm-pH-bLa" firstAttribute="centerY" secondItem="ipW-KF-7hm" secondAttribute="centerY" id="29s-kr-bYr"/>
-                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="memeImageView" destination="0Rm-pH-bLa" id="o7z-4y-mtt"/>
@@ -280,12 +275,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894" y="-1"/>
+            <point key="canvasLocation" x="-945" y="-1"/>
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="square.grid.3x3.fill" catalog="system" width="128" height="112"/>
+        <image name="grid" catalog="system" width="128" height="112"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -30,7 +30,7 @@ class SentMemesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
         tableView!.reloadData()
     }
     
@@ -39,7 +39,7 @@ class SentMemesTableViewController: UITableViewController {
     @objc func addNewMeme(_ sender: Any) {
         let editMemeController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         editMemeController.hidesBottomBarWhenPushed = true
-        self.navigationController!.pushViewController(editMemeController, animated: true)
+        present(editMemeController, animated: true, completion: nil)
     }
     
     // MARK: Table View Data Source
@@ -50,7 +50,7 @@ class SentMemesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the image and text

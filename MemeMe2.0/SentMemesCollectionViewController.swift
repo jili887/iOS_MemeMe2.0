@@ -28,17 +28,15 @@ class SentMemesCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewMeme))
-        let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
         
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: view.frame.width / 3, height: view.frame.height / 3)
+        collectionView.collectionViewLayout = layout
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
         collectionView!.reloadData()
     }
     
@@ -47,7 +45,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @objc func addNewMeme(_ sender: Any) {
         let editMemeController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         editMemeController.hidesBottomBarWhenPushed = true
-        self.navigationController!.pushViewController(editMemeController, animated: true)
+        present(editMemeController, animated: true, completion: nil)
     }
     
     // MARK: Collection View Data Source
