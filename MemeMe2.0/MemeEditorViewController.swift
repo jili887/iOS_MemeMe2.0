@@ -125,7 +125,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        if (bottomTextField.isFirstResponder) {
+        if bottomTextField.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }

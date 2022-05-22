@@ -108,11 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-o9-Rqc">
-                                <rect key="frame" x="127" y="358" width="160" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="meY-zM-wC0"/>
-                                    <constraint firstAttribute="width" constant="160" id="sNf-ay-YrG"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mio-cT-cBy"/>
@@ -120,6 +116,8 @@
                         <constraints>
                             <constraint firstItem="EQ7-o9-Rqc" firstAttribute="centerY" secondItem="wOj-84-UGH" secondAttribute="centerY" id="Fgx-XW-H1z"/>
                             <constraint firstItem="EQ7-o9-Rqc" firstAttribute="centerX" secondItem="wOj-84-UGH" secondAttribute="centerX" id="NUW-fq-2Jf"/>
+                            <constraint firstItem="EQ7-o9-Rqc" firstAttribute="top" secondItem="mio-cT-cBy" secondAttribute="top" id="cOd-NZ-ivk"/>
+                            <constraint firstItem="EQ7-o9-Rqc" firstAttribute="leading" secondItem="mio-cT-cBy" secondAttribute="leading" id="mtK-fN-z1o"/>
                         </constraints>
                     </view>
                     <connections>
